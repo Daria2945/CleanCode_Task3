@@ -21,5 +21,9 @@
     {
         if (СanShoot)
             _bullets -= _bulletCountPerShoot;
+
+        string exceptionMessage = "Недостаточно пуль для выстрела";
+
+        throw new Exception(exceptionMessage);
     }
 }
