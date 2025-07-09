@@ -1,5 +1,7 @@
 ﻿class Weapon
 {
+    private const string NotEnoughBulletMessage = "Недостаточно пуль для выстрела";
+
     private readonly int _bulletCountPerShoot = 1;
     private int _bullets;
 
@@ -19,11 +21,9 @@
 
     public void Shoot()
     {
-        if (СanShoot)
-            _bullets -= _bulletCountPerShoot;
+        if (СanShoot == false)
+            throw new Exception(NotEnoughBulletMessage);
 
-        string exceptionMessage = "Недостаточно пуль для выстрела";
-
-        throw new Exception(exceptionMessage);
+        _bullets -= _bulletCountPerShoot;
     }
 }
